@@ -63,3 +63,24 @@ gene.obj=read.transcript.features(system.file("tests", "refseq.hg18.bed.txt", pa
 
 # annotate differentially methylated Cs with promoter/exon/intron using annotation data
 annotate.WithGenicParts(myDiff,gene.obj)
+
+#---------------
+
+
+library(fastseg)
+library(mclust)
+
+system("curl -L -o H1.chr21.chr22.rds https://www.dropbox.com/s/zd7dxn6ykoe55uy/H1.chr21.chr22.rds?dl=1")
+mbw=readRDS("/home/bobby/Downloads/mdiff.chao.mutVSwt.rds")
+
+methSeg(methylDiff.obj, diagnostic.plot=TRUE)
+segments = methSeg(mbw,diagnostic.plot=TRUE)
+methSeg(methylDiff.obj,diagnostic.plot=TRUE,maxInt=100,minSeg=10)
+methSeg(mbw[1:5000],diagnostic.plot=TRUE,maxInt=100,minSeg=10, G = 1:4)
+segments = methSeg(mbw[1:1145],diagnostic.plot=TRUE)
+
+methSeg(mbr, diagnostic.plot=TRUE)
+
+mbr =readRDS("/home/bobby/Downloads/H1.chr21.chr22.rds")
+
+methSeg2bed(segments, trackLine="track name='meth segments' description='meth segments' itemRgb=On", filename="/home/bobby/Downloads/H1.chr21.chr22.triallen.seg.bed")

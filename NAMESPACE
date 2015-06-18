@@ -1,6 +1,13 @@
 import(methods)
 
 import(GenomicRanges)
+
+import(fastseg)
+
+import(mclust)
+
+import(rtracklayer)
+
 #import(KernSmooth)
 
 #import(RHmm)
@@ -86,3 +93,7 @@ export(updateMethObject)
 export(reconstruct)
 export(removeComp)
 export(assocComp)
+export(methSeg)
+export(methSeg2bed)
+export(diagPlot)
+export(densityFind)

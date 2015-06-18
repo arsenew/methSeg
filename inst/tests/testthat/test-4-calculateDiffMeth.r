@@ -1,5 +1,5 @@
 library("methylKit")
-context("calculateDiffMeth and annotate.WithGenicPart checks")
+context("calculateDiffMeth and annotate.WithGenicParts checks")
 
 file.list=list( system.file("extdata", "test1.myCpG.txt", package = "methylKit"),
                 system.file("extdata", "test2.myCpG.txt", package = "methylKit"),

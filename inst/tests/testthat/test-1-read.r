@@ -1,4 +1,4 @@
-context("test file list and read and getMethylationStats check")
+context("test file list and modRead and getMethylationStats check")
 
 file.list=list( system.file("extdata", "test1.myCpG.txt", package = "methylKit"),
                 system.file("extdata", "test2.myCpG.txt", package = "methylKit"),
